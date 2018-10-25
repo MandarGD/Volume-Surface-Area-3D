@@ -11,33 +11,44 @@ package pkg3dshape;
  */
 public class RectangularPrism extends Shapes implements ShapeInterface{
     
-    /*public RectangularPrism(){
+    /*public RectangularPrism(){ //default constructor
         Side1 = 0;
         Side2 = 0;
         Side3 = 0;
     }
     */
     
-    public RectangularPrism(double x, double y, double z){
-        Side1 = x;
-        Side2 = y;
-        Side3 = z;
+    public RectangularPrism(){ //Main constructor
+        System.out.println("Enter the Length of the Prism");
+        Side1 = input.nextDouble();
+        
+        System.out.println("Enter the Width of the Prism");
+        Side2 = input.nextDouble();
+        
+        System.out.println("Enter the Height of the Prism");
+        Side3 = input.nextDouble();
     }
     
+    //to make further calculations easier
+    private double GetArea(){
+        return Side1 * Side2;
+    }
+    
+    //overriden interface methods
     
     @Override
-    public double GetVolume(){
-        return Side1 * Side2 * Side3;
+    public double GetVolume(){ //Volume
+        return (GetArea()) * Side3;
     }
     
     @Override
-    public double GetSurfaceArea(){
-        return 2*((Side1*Side2) + (Side1*Side3) + (Side2 * Side3));
+    public double GetSurfaceArea(){ //Surface Area
+        return 2*((GetArea()) + (Side1*Side3) + (Side2 * Side3));
     }
     
     @Override
-    public void VandSA(){
-        System.out.println(GetVolume() + " cm^3");
-        System.out.println(GetSurfaceArea() + " cm^2");
+    public void VandSA(){ //Helper Method
+        System.out.println("The Volume is " + formatter.format(GetVolume()) + " cm^3");
+        System.out.println("The Surface Area is " + formatter.format(GetSurfaceArea()) + " cm^2");
     }
 }

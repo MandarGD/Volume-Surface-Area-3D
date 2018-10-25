@@ -9,23 +9,28 @@ package pkg3dshape;
  *
  * @author mandar
  */
+
+//subclass of shapes for a Tetrahedron
 public class Tetrahedron extends Shapes implements ShapeInterface{
     
     
     
-    public Tetrahedron(){
+    /*public Tetrahedron(){ //default constructor
         Side1 = 0;
-        Side2 = 0;
+        
+        
+    }
+    */
+    public Tetrahedron(){ //main Constructor
+        System.out.println("Enter the length of the Tetrahedron");
+        Side1 = input.nextDouble();
         
     }
     
-    public Tetrahedron(double l){
-        Side1 = l;
-        
-    }
+    //overriden interface methods
     
     @Override
-    public double GetVolume(){
+    public double GetVolume(){ //Volume 
         return (Math.pow(Side1, 3))/(6*(Math.sqrt(2)));
     }
     
@@ -34,13 +39,13 @@ public class Tetrahedron extends Shapes implements ShapeInterface{
      * @return
      */
     @Override
-    public double GetSurfaceArea(){
+    public double GetSurfaceArea(){ //Surface Area
         return (Math.sqrt(3))*(Math.pow(Side1, 2));
     }
     
     @Override
-    public void VandSA(){
-        System.out.println(GetVolume() + " cm^3");
-        System.out.println(GetSurfaceArea() + " cm^2");
+    public void VandSA(){ //helper method
+       System.out.println("The Volume is " + formatter.format(GetVolume()) + " cm^3");
+       System.out.println("The Surface Area is " + formatter.format(GetSurfaceArea()) + " cm^2");
     }
 }

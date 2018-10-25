@@ -9,18 +9,23 @@ package pkg3dshape;
  *
  * @author mandar
  */
+
+//subclass of shapes for a sphere
 public class Sphere extends Shapes implements ShapeInterface{
     
-    public Sphere(){
+    /*public Sphere(){ //default contructor
         Side1 = 0;
     }
-    
-    public Sphere(double radius){
-        Side1 =radius;
+    */
+    public Sphere(){ //main Constructor
+        System.out.println("Enter the Radius of the Sphere");
+        Side1 = input.nextDouble();
     }
     
+    //overriden interface methods
+    
     @Override
-    public double GetVolume(){
+    public double GetVolume(){ //Volume
         return (4/3)*(Math.PI)*(Math.pow(Side1, 3));
     }
     
@@ -29,14 +34,14 @@ public class Sphere extends Shapes implements ShapeInterface{
      * @return
      */
     @Override
-    public double GetSurfaceArea(){
+    public double GetSurfaceArea(){ //Surface Area
         return 4*(Math.PI)*(Math.pow(Side1, 2));
     }
     
     @Override
-    public void VandSA(){
-        System.out.println(GetVolume() + " cm^3");
-        System.out.println(GetSurfaceArea() + " cm^2");
+    public void VandSA(){ //Helper method
+        System.out.println("The Volume is " + formatter.format(GetVolume()) + " cm^3");
+        System.out.println("The Surface Area is " + formatter.format(GetSurfaceArea()) + " cm^2");
     }
     
 }

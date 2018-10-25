@@ -13,31 +13,12 @@ package pkg3dshape;
 //subclass of shapes for a sphere
 public class Sphere extends Shapes implements ShapeInterface{
     
-    /*public Sphere(){ //default contructor
+    public Sphere(){ //default contructor
         Side1 = 0;
     }
-    */
-    public Sphere(){ //main Constructor
-        System.out.println("Enter the Radius of the Sphere");
-        
-        while (true){//test Side1 for something that is not a number
-            
-            try{
-                Side1 = input.nextDouble();
-                break;
-            }
-            catch(Exception e){
-                input.next();
-                System.out.println("Enter a number please");
-            }
-        }
-        
-        while (Check(Side1) != true){ //check if Side1 is negative
-        
-            System.out.println("Please enter a POSITIVE number");
-            Side1 = input.nextDouble();
-        
-        }
+    
+    public Sphere(double radius){ //main Constructor
+       Side1 = radius;
     }
     
     //overriden interface methods

@@ -16,14 +16,16 @@ public class Cube extends Shapes implements ShapeInterface{
     
     
     
-   /* public Cube(){ //Default constructor
+    public Cube(){ //Default constructor
        Side1 = 0;
     }
-    */
-    public Cube(){ //Main Constructor
-        System.out.println("Enter the side length of the cube");
+    
+    public Cube(double y){ //Main Constructor
+        //System.out.println("Enter the side length of the cube");
         
-        while (true){ //test Side1 for something that is not a number
+        Side1 = y;
+        
+       /* while (true){ //test Side1 for something that is not a number
             
             try{
                 Side1 = input.nextDouble();
@@ -39,9 +41,9 @@ public class Cube extends Shapes implements ShapeInterface{
             System.out.println("Please enter a POSITIVE number");
             Side1 = input.nextDouble();
         
-        }
+        }*/
     }
-    
+   
     //overriden interface methods
     
     @Override

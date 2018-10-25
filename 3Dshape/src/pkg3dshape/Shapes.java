@@ -5,6 +5,7 @@
  */
 package pkg3dshape;
 import java.util.Scanner;
+import java.text.DecimalFormat;
 /**
  *
  * @author mandar
@@ -15,47 +16,54 @@ public class Shapes{
      * @param args the command line arguments
      */
     
-    double Side1;
+    DecimalFormat formatter = new DecimalFormat("#.##"); //format all calculations to hundreths
+    Scanner input = new Scanner(System.in);
+    
+    double Side1; //class vairables to be inherited
     double Side2;
     double Side3;
     
+    
+    
     public static void main(String[] args) {
         
-        Scanner input = new Scanner(System.in);
+        Scanner Choice = new Scanner(System.in);
         
-        System.out.println("Which shape do you want to get Volume and Surface Area");
+        //determine what shape
+        System.out.println("Which shape do you want to get Volume and Surface Area (enter the number)");
         System.out.println("[1] Cube");
         System.out.println("[2] Rectangular Prism");
         System.out.println("[3] Cylinder");
         System.out.println("[4] Sphere");
         System.out.println("[5] Tetrahedron");
         
-        String choice = input.next();
+        String choice = Choice.next();
         
+        //switch to instantiate object based on choice
         switch(choice){
             case "1" :
-                System.out.println("Enter the side length of the cube");
-                Cube CUBE = new Cube(input.nextInt());
-                CUBE.VandSA();
+                //Cube
+                Cube CUBE = new Cube();
+                CUBE.VandSA(); //invoke helper method
                 break;
             case "2":
-                System.out.println("What are the dimensions of the Rectangular Prism");
-                RectangularPrism RP = new RectangularPrism(input.nextInt(), input.nextInt(), input.nextInt());
+                //Rectangular Prism
+                RectangularPrism RP = new RectangularPrism();
                 RP.VandSA();
                 break;
             case "3":
-                System.out.println("Enter the radius followed by the height of the Cylinder");
-                Cylinder CYLINDER = new Cylinder(input.nextInt(),input.nextInt());
+                //Cylinder
+                Cylinder CYLINDER = new Cylinder();
                 CYLINDER.VandSA();
                 break;
             case "4":
-                System.out.println("Enter the radius of the Sphere");
-                Sphere SPHERE = new Sphere(input.nextInt());
+                //Sphere
+                Sphere SPHERE = new Sphere();
                 SPHERE.VandSA();
                 break;
             case "5":
-                System.out.println("Enter a side length of the Tetrahedral");
-                Tetrahedron TETRAHEDRON = new Tetrahedron(input.nextInt());
+                //Tetrahedron
+                Tetrahedron TETRAHEDRON = new Tetrahedron();
                 TETRAHEDRON.VandSA();
                 break;
             default:

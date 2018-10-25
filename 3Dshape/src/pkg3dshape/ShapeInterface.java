@@ -9,6 +9,8 @@ package pkg3dshape;
  *
  * @author mandar
  */
+
+//interface for sub classes to override
 public interface ShapeInterface {
     
     double GetVolume();

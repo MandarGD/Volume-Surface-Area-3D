@@ -14,16 +14,21 @@ package pkg3dshape;
 
 public class Cube extends Shapes implements ShapeInterface{
     
-    //public Cube(){
-      //  Side1 = 0;
-    //}
     
-    public Cube(double x){
-        Side1 = x;
+    
+   /* public Cube(){ //Default constructor
+       Side1 = 0;
+    }
+    */
+    public Cube(){ //Main Constructor
+        System.out.println("Enter the side length of the cube");
+        Side1 = input.nextDouble();
     }
     
+    //overriden interface methods
+    
     @Override
-    public double GetVolume(){
+    public double GetVolume(){ //Volume
         return Math.pow(Side1, 3);
     }
     
@@ -32,14 +37,14 @@ public class Cube extends Shapes implements ShapeInterface{
      * @return
      */
     @Override
-    public double GetSurfaceArea(){
+    public double GetSurfaceArea(){ //Surface Area
         return 6*(Math.pow(Side1, 2));
     }
     
     @Override
-    public void VandSA(){
-        System.out.println(GetVolume() + " cm^3");
-        System.out.println(GetSurfaceArea() + " cm^2");
+    public void VandSA(){ //Helper Method
+        System.out.println("The Volume is " + formatter.format(GetVolume()) + " cm^3");
+        System.out.println("The Surface Area is " + formatter.format(GetSurfaceArea()) + " cm^2");
     }
     
 }

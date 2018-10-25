@@ -23,6 +23,30 @@ public class Shapes{
     double Side2;
     double Side3;
     
+    public boolean Check(double y){
+        if (y<0){
+            
+            return false;
+        } 
+        else {
+            return true;
+        }
+    }
+    
+   /* public double GetSide(double x){
+        while (true){
+            
+            try{
+                x = input.nextDouble();
+                break;
+            }
+            catch(Exception e){
+                input.next();
+                System.out.println("Enter a number please");
+            }
+        }
+        return x;
+    }*/
     
     
     public static void main(String[] args) {

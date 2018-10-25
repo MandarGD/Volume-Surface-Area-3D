@@ -15,7 +15,6 @@ public interface ShapeInterface {
     
     double GetVolume();
     double GetSurfaceArea();
-    
     void VandSA();
     
 }

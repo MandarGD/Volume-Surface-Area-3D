@@ -11,77 +11,17 @@ package pkg3dshape;
  */
 public class RectangularPrism extends Shapes implements ShapeInterface{
     
-    /*public RectangularPrism(){ //default constructor
+    public RectangularPrism(){ //default constructor
         Side1 = 0;
         Side2 = 0;
         Side3 = 0;
     }
-    */
     
-    public RectangularPrism(){ //Main constructor
-        System.out.println("Enter the Length of the Prism");
-        
-        while (true){//test Side1 for something that is not a number
-            
-            try{
-                Side1 = input.nextDouble();
-                break;
-            }
-            catch(Exception e){
-                input.next();
-                System.out.println("Enter a number please");
-            }
-        }
     
-        while (Check(Side1) != true){ //check if Side1 is negative
-        
-            System.out.println("Please enter a POSITIVE number");
-            Side1 = input.nextDouble();
-        
-        }
-        
-        System.out.println("Enter the Width of the Prism");
-        while (true){ //test Side2 for something that is not a number
-            
-            try{
-                Side2 = input.nextDouble();
-                break;
-            }
-            catch(Exception e){
-                input.next();
-                System.out.println("Enter a number please");
-            }
-        }
-        
-        
-        while (Check(Side2) != true){ //check if Side2 is negative
-        
-            System.out.println("Please enter a POSITIVE number");
-            Side2 = input.nextDouble();
-        
-        }
-        
-        System.out.println("Enter the Height of the Prism");
-        
-        while (true){ //test Side3 for something that is not a number
-            
-            try{
-                Side3 = input.nextDouble();
-                break;
-            }
-            catch(Exception e){
-                input.next();
-                System.out.println("Enter a number please");
-            }
-        }
-        
-        
-        while (Check(Side3) != true){ //check if Side3 is negative
-        
-            System.out.println("Please enter a POSITIVE number");
-            Side3 = input.nextDouble();
-        
-        }
+    public RectangularPrism(double l, double w, double h ){ //Main constructor
+        Side1 = l;
+        Side2 = w;
+        Side3 = h;
         
     }
     

@@ -23,8 +23,25 @@ public class Tetrahedron extends Shapes implements ShapeInterface{
     */
     public Tetrahedron(){ //main Constructor
         System.out.println("Enter the length of the Tetrahedron");
-        Side1 = input.nextDouble();
         
+        while (true){ //test Side1 for something that is not a number
+            
+            try{
+                Side1 = input.nextDouble();
+                break;
+            }
+            catch(Exception e){
+                input.next();
+                System.out.println("Enter a number please");
+            }
+        }
+        
+        while (Check(Side1) != true){ //check if Side2 is negative
+        
+            System.out.println("Please enter a POSITIVE number");
+            Side1 = input.nextDouble();
+        
+        }  
     }
     
     //overriden interface methods

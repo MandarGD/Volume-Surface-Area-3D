@@ -19,7 +19,25 @@ public class Sphere extends Shapes implements ShapeInterface{
     */
     public Sphere(){ //main Constructor
         System.out.println("Enter the Radius of the Sphere");
-        Side1 = input.nextDouble();
+        
+        while (true){//test Side1 for something that is not a number
+            
+            try{
+                Side1 = input.nextDouble();
+                break;
+            }
+            catch(Exception e){
+                input.next();
+                System.out.println("Enter a number please");
+            }
+        }
+        
+        while (Check(Side1) != true){ //check if Side1 is negative
+        
+            System.out.println("Please enter a POSITIVE number");
+            Side1 = input.nextDouble();
+        
+        }
     }
     
     //overriden interface methods

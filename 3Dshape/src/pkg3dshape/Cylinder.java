@@ -22,9 +22,46 @@ public class Cylinder extends Shapes implements ShapeInterface{
     
     public Cylinder(){ //Main Constructor
         System.out.println("Enter the Radius of the Cylinder");
-        Side1 = input.nextDouble();
+        
+        while (true){ //test Side1 for something that is not a number
+            
+            try{
+                Side1 = input.nextDouble();
+                break;
+            }
+            catch(Exception e){
+                input.next();
+                System.out.println("Enter a number please");
+            }
+        }
+        
+        while (Check(Side1) != true){ //check if Side1 is negative
+        
+            System.out.println("Please enter a POSITIVE number");
+            Side1 = input.nextDouble();
+        
+        }
+        
         System.out.println("Enter the Height of the Cylinder");
-        Side2 = input.nextDouble();
+        
+        while (true){ //test Side2 for something that is not a number
+            
+            try{
+                Side2 = input.nextDouble();
+                break;
+            }
+            catch(Exception e){
+                input.next();
+                System.out.println("Enter a number please");
+            }
+        }
+        
+        while (Check(Side2) != true){ //check if Side2 is negative
+        
+            System.out.println("Please enter a POSITIVE number");
+            Side2 = input.nextDouble();
+        
+        }
     }
     
     /**

@@ -9,7 +9,7 @@ package pkg3dshape;
  *
  * @author mandar
  */
-public class Cylinder extends Shapes{
+public class Cylinder extends Shapes implements ShapeInterface{
     
     public Cylinder(){
         Side1 = 0;
@@ -21,16 +21,25 @@ public class Cylinder extends Shapes{
         Side2 = height;
     }
     
+    /**
+     *
+     * @return
+     */
+    
+    @Override
     public double GetVolume(){
         return (Math.PI)*(Math.pow(Side1, 2))*(Side2);
     }
     
+    @Override
     public double GetSurfaceArea(){
         return (2*(Math.PI)*(Side1)*(Side2)) + (2*(Math.PI)*(Math.pow(Side1, 2)));
     }
     
+   
+    @Override
     public void VandSA(){
-        System.out.println(GetVolume());
-        System.out.println(GetSurfaceArea());
+        System.out.println(GetVolume() + " cm^3");
+        System.out.println(GetSurfaceArea() + " cm^2");
     }
 }

@@ -12,7 +12,7 @@ package pkg3dshape;
  * @author mandar
  */
 
-public class Cube extends Shapes{
+public class Cube extends Shapes implements ShapeInterface{
     
     //public Cube(){
       //  Side1 = 0;
@@ -22,17 +22,24 @@ public class Cube extends Shapes{
         Side1 = x;
     }
     
+    @Override
     public double GetVolume(){
         return Math.pow(Side1, 3);
     }
     
+    /**
+     *
+     * @return
+     */
+    @Override
     public double GetSurfaceArea(){
         return 6*(Math.pow(Side1, 2));
     }
     
+    @Override
     public void VandSA(){
-        System.out.println(GetVolume());
-        System.out.println(GetSurfaceArea());
+        System.out.println(GetVolume() + " cm^3");
+        System.out.println(GetSurfaceArea() + " cm^2");
     }
     
 }

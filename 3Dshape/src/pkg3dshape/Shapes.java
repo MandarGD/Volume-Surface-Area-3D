@@ -33,21 +33,6 @@ public class Shapes{
         }
     }
     
-   /* public double GetSide(double x){
-        while (true){
-            
-            try{
-                x = input.nextDouble();
-                break;
-            }
-            catch(Exception e){
-                input.next();
-                System.out.println("Enter a number please");
-            }
-        }
-        return x;
-    }*/
-    
     
     public static void main(String[] args) {
         

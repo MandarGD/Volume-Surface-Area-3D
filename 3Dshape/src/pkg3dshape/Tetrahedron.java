@@ -9,7 +9,7 @@ package pkg3dshape;
  *
  * @author mandar
  */
-public class Tetrahedron extends Shapes{
+public class Tetrahedron extends Shapes implements ShapeInterface{
     
     
     
@@ -24,11 +24,23 @@ public class Tetrahedron extends Shapes{
         
     }
     
+    @Override
     public double GetVolume(){
         return (Math.pow(Side1, 3))/(6*(Math.sqrt(2)));
     }
     
+    /**
+     *
+     * @return
+     */
+    @Override
     public double GetSurfaceArea(){
         return (Math.sqrt(3))*(Math.pow(Side1, 2));
+    }
+    
+    @Override
+    public void VandSA(){
+        System.out.println(GetVolume() + " cm^3");
+        System.out.println(GetSurfaceArea() + " cm^2");
     }
 }

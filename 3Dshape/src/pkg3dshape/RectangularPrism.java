@@ -9,7 +9,7 @@ package pkg3dshape;
  *
  * @author mandar
  */
-public class RectangularPrism extends Shapes{
+public class RectangularPrism extends Shapes implements ShapeInterface{
     
     /*public RectangularPrism(){
         Side1 = 0;
@@ -25,16 +25,19 @@ public class RectangularPrism extends Shapes{
     }
     
     
+    @Override
     public double GetVolume(){
         return Side1 * Side2 * Side3;
     }
     
+    @Override
     public double GetSurfaceArea(){
         return 2*((Side1*Side2) + (Side1*Side3) + (Side2 * Side3));
     }
     
+    @Override
     public void VandSA(){
-        System.out.println(GetVolume());
-        System.out.println(GetSurfaceArea());
+        System.out.println(GetVolume() + " cm^3");
+        System.out.println(GetSurfaceArea() + " cm^2");
     }
 }

@@ -9,7 +9,7 @@ package pkg3dshape;
  *
  * @author mandar
  */
-public class Sphere extends Shapes{
+public class Sphere extends Shapes implements ShapeInterface{
     
     public Sphere(){
         Side1 = 0;
@@ -19,17 +19,24 @@ public class Sphere extends Shapes{
         Side1 =radius;
     }
     
+    @Override
     public double GetVolume(){
         return (4/3)*(Math.PI)*(Math.pow(Side1, 3));
     }
     
+    /**
+     *
+     * @return
+     */
+    @Override
     public double GetSurfaceArea(){
         return 4*(Math.PI)*(Math.pow(Side1, 2));
     }
     
+    @Override
     public void VandSA(){
-        System.out.println(GetVolume());
-        System.out.println(GetSurfaceArea());
+        System.out.println(GetVolume() + " cm^3");
+        System.out.println(GetSurfaceArea() + " cm^2");
     }
     
 }

@@ -144,7 +144,7 @@ public class Shapes{
                 break;
             
             default:
-                System.out.println("WHY");
+                System.out.println("You didn't enter a choice");
             
         }
         

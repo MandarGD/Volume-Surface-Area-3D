@@ -21,27 +21,9 @@ public class Cube extends Shapes implements ShapeInterface{
     }
     
     public Cube(double y){ //Main Constructor
-        //System.out.println("Enter the side length of the cube");
         
         Side1 = y;
         
-       /* while (true){ //test Side1 for something that is not a number
-            
-            try{
-                Side1 = input.nextDouble();
-                break;
-            }
-            catch(Exception e){
-                input.next();
-                System.out.println("Enter a number please");
-            }
-        }
-        
-        while (Check(Side1) != true){ //Check is Side1 is negative or positive
-            System.out.println("Please enter a POSITIVE number");
-            Side1 = input.nextDouble();
-        
-        }*/
     }
    
     //overriden interface methods
